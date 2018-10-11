@@ -19,7 +19,7 @@ using std::vector;
 
 int main(int argc, char const *argv[]) {
 
-    unsigned argidx(0);     // yes, I'm using the stupid "C++ style declaration" deliberately :-)
+    unsigned argidx(0);     // yes, I'm using the stupid "C++ style initialization" deliberately :-)
     vector<string> args;
     for (int idx(0); idx != argc; idx++) {
         args.push_back(string(argv[idx]));
