@@ -1,5 +1,4 @@
 /**
- *
  * Pure-C implementation of stack
  *
  * Author:      Xiaoguang Zhu
@@ -81,7 +80,8 @@ getelem(const STACK *const self, int idx) {
     if (idx < 0 || idx >= self->pos) {
         // NOTE: parameter validation cannot be performed, due to return value
         //       data type
-        /* pass */
+        /* TODO: */
+        return 0;
     }
     return self->elems[idx];
 }
@@ -127,13 +127,11 @@ assign(STACK *const self, const STACK &other) {
         __clearSTACK(self);
         return 0;
     }
-    for (int idx(0); idx != other.pos; idx++) {
-        if (push(self, other.elems[idx]) == 0) {
-            break;
-        } else {
-            /* pass */
-        }
-    }
+    // get number of elements to copy
+    int num_copy = (other.pos < self->max) ? other.pos : self->max;
+    // do copy job
+    self->pos = num_copy;
+    memcpy(self->elems, other.elems, sizeof(int) * num_copy);
     return self;
 }
 
@@ -151,8 +149,12 @@ print(const STACK *const self) {
         return;
     }
     // print to command line, two spaces in between
-    for (int idx = 0; idx != self->pos; idx++) {
-        printf("  %d", self->elems[idx]);
+    int stack_depth = self->pos;
+    for (int idx = 0; idx != stack_depth; idx++) {
+        printf("%d", self->elems[idx]);
+        if (idx != stack_depth - 1) {
+           printf("  ");
+        }
     }
     return;
 }

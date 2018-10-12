@@ -94,7 +94,12 @@ int main(int argc, char const *argv[]) {
             }
             if (!error_occured) {
                 // display result
-                print(pws);
+                if (howMany(pws) != 0) {
+                    cout << "  ";
+                    print(pws);
+                } else {
+                    /* pass */
+                }
             } else {
                 break;
             }
@@ -122,7 +127,12 @@ int main(int argc, char const *argv[]) {
             if (error_occured) {
                 break;
             } else {
-                print(pws);
+                if (howMany(pws) != 0) {
+                    cout << "  ";
+                    print(pws);
+                } else {
+                    /* pass */
+                }
             }
         } else if (word == string("A")) {
             idx++;
@@ -143,7 +153,12 @@ int main(int argc, char const *argv[]) {
                 destroySTACK(pws);
                 delete pws;
                 pws = dststk;
-                print(pws);
+                if (howMany(pws) != 0) {
+                    cout << "  ";
+                    print(pws);
+                } else {
+                    /* pass */
+                }
             }
         } else if (word == string("C")) {
             // create new stack space
@@ -158,7 +173,12 @@ int main(int argc, char const *argv[]) {
                 destroySTACK(pws);
                 delete pws;
                 pws = dststk;
-                print(pws);
+                if (howMany(pws) != 0) {
+                    cout << "  ";
+                    print(pws);
+                } else {
+                    /* pass */
+                }
             }
         } else if (word == string("N")) {
             cout << "  " << howMany(pws);
