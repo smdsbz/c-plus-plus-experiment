@@ -33,8 +33,6 @@ int main(int argc, char const *argv[]) {
     // cout << outputname;
     outputname.append(".txt");
 
-    bool is_first_output(true);
-
     // Pointer to Working Stack, or PWS
     struct STACK *pws(new struct STACK);    // NOTE: throws std::bad_alloc
 
@@ -96,7 +94,6 @@ int main(int argc, char const *argv[]) {
             }
             if (!error_occured) {
                 // display result
-                cout << "  ";
                 print(pws);
             } else {
                 break;
@@ -125,7 +122,6 @@ int main(int argc, char const *argv[]) {
             if (error_occured) {
                 break;
             } else {
-                cout << "  ";
                 print(pws);
             }
         } else if (word == string("A")) {
@@ -147,7 +143,6 @@ int main(int argc, char const *argv[]) {
                 destroySTACK(pws);
                 delete pws;
                 pws = dststk;
-                cout << "  ";
                 print(pws);
             }
         } else if (word == string("C")) {
@@ -163,7 +158,6 @@ int main(int argc, char const *argv[]) {
                 destroySTACK(pws);
                 delete pws;
                 pws = dststk;
-                cout << "  ";
                 print(pws);
             }
         } else if (word == string("N")) {

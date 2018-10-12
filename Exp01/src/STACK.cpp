@@ -152,10 +152,7 @@ print(const STACK *const self) {
     }
     // print to command line, two spaces in between
     for (int idx = 0; idx != self->pos; idx++) {
-        printf("%d", self->elems[idx]);
-        if (idx != self->pos - 1) {
-            printf("  ");   // two spaces
-        }
+        printf("  %d", self->elems[idx]);
     }
     return;
 }
