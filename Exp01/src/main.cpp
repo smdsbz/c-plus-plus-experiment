@@ -25,13 +25,12 @@ int main(int argc, char const *argv[]) {
         args.push_back(string(argv[idx]));
     }
 
-    // get output .txt file name
-    string outputname(args[0]);
-    if (outputname[outputname.size() - 4] == '.') {     // kill suffix if there is a 3-char suffix
-        outputname.erase(outputname.size() - 4, 4);
-    }
-    // cout << outputname;
-    outputname.append(".txt");
+    // // get output .txt file name
+    // string outputname(args[0]);
+    // if (outputname[outputname.size() - 4] == '.') {     // kill suffix if there is a 3-char suffix
+    //     outputname.erase(outputname.size() - 4, 4);
+    // }
+    // outputname.append(".txt");
 
     // Pointer to Working Stack, or PWS
     struct STACK *pws(new struct STACK);    // NOTE: throws std::bad_alloc
@@ -76,7 +75,7 @@ int main(int argc, char const *argv[]) {
                 // checking if reached next flag
                 try {
                     stoi(args[idx]);
-                } catch (std::invalid_argument e) {
+                } catch (std::invalid_argument &e) {
                     idx--;      // complementing `idx++` at end of for-loop
                     break;
                 }

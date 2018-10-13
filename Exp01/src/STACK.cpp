@@ -6,10 +6,9 @@
  * Class:       CSIE1601
  */
 
-#include <iostream>
-using std::cin; using std::cout; using std::endl;
-
 // NOTE: due to experiment restrictions, keep it Pure-C!
+#include <cstdio>
+using std::printf;
 #include <cstdlib>
 using std::malloc; using std::free;
 #include <cstring>
@@ -62,6 +61,9 @@ initSTACK(STACK *const self, const STACK &other) {
         __clearSTACK(self);
         return;
     }
+    // re-init object
+    __clearSTACK(self);
+    self->elems = (int *)malloc(sizeof(int) * other.max);
     // copy content
     memcpy(self->elems, other.elems, sizeof(int) * other.max);
     self->max = other.max;
@@ -148,7 +150,7 @@ print(const STACK *const self) {
     if (self == 0) {
         return;
     }
-    // print to command line, two spaces in between
+    // print to standard out, two spaces in between
     int stack_depth = self->pos;
     for (int idx = 0; idx != stack_depth; idx++) {
         printf("%d", self->elems[idx]);
