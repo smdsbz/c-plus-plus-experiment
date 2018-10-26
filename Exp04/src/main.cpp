@@ -12,9 +12,9 @@ using std::cin; using std::cout; using std::endl;
 #define F       ( 13 )
 // NOTE: the following `place`s are one-indexed
 // initial place of our gent
-#define m       ( 3 )
+#define m       ( 1 )
 // initial place of our lady
-#define f       ( 7 )
+#define f       ( 1 )
 
 
 /******* Solution Session *******/
@@ -70,18 +70,14 @@ public:
     }
 
     unsigned solve(void) {
-        unsigned rounds = 1;
-        int last_gent, last_lady;
         // first round
-        this->_stepOneRound(last_gent, last_lady);
-        if (this->_isThePair(last_gent, last_lady)) {
-            return rounds;
-        }
-        // more rounds
-        while (!this->_isThePair(last_gent, last_lady)) {
+        unsigned rounds = 0;
+        int last_gent, last_lady;
+        // keep dancing 'til they meet!
+        do {
             this->_stepOneRound(last_gent, last_lady);
             ++rounds;
-        }
+        } while (!this->_isThePair(last_gent, last_lady));
         return rounds;
     }
 
