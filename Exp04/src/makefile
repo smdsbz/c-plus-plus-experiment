@@ -22,8 +22,8 @@ test_1:	$(TESTEXE)
 
 test_2:	$(TESTEXE)
 	./$(TESTEXE) -S 3 -I 1 2 3 4 5 6 -O 1 -N -I 222 -N
-	@echo ""	# newline
-	@echo "Expected output: \`S  3  I  1  2  3  4  5  6  O  2  3  4  5  6  N  4  I  E\`"
+	@echo ""
+	@echo "Expected output: \`S  3  I  1  2  3  4  5  6  O  2  3  4  5  6  N  5  I  E\`"
 
 
 #### Solution for Sioree Problem ####

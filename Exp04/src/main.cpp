@@ -12,7 +12,7 @@ using std::cin; using std::cout; using std::endl;
 #define F       ( 13 )
 // NOTE: the following `place`s are one-indexed
 // initial place of our gent
-#define m       ( 1 )
+#define m       ( 3 )
 // initial place of our lady
 #define f       ( 1 )
 
@@ -52,6 +52,7 @@ public:
                 this->maids_queue << NONTARGET;
             }
         }
+        return;
     }
 
     void _stepOneRound(int &gent, int &lady) {
@@ -70,7 +71,6 @@ public:
     }
 
     unsigned solve(void) {
-        // first round
         unsigned rounds = 0;
         int last_gent, last_lady;
         // keep dancing 'til they meet!
