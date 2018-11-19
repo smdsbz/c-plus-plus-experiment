@@ -16,10 +16,12 @@ using std::cin; using std::cout; using std::endl;
  *  `self`: `QUEUE`: `*this`
  */
 #define _move_input_to_output(self)                                         \
-    for (int st = 0, range = int((self).s2); st != range; ++st) {           \
-        int tmp;                                                            \
-        (self).s2 >> tmp;                                                   \
-        (self).STACK::operator<<(tmp);                                      \
+    {                                                                       \
+        for (int st = 0, range = int((self).s2); st != range; ++st) {       \
+            int tmp;                                                        \
+            (self).s2 >> tmp;                                               \
+            (self).STACK::operator<<(tmp);                                  \
+        }                                                                   \
     }
 
 
@@ -34,6 +36,9 @@ using std::cin; using std::cout; using std::endl;
 QUEUE::QUEUE(int size)
         :   STACK(size),
             s2(size) {
+    if (size <= 0) {
+        throw std::runtime_error("Size must be positive!");
+    }
     return;
 }
 

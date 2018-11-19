@@ -1,4 +1,4 @@
-CC		=	g++
+CC			=	g++
 CXXSTD		=	c++11
 OUTFILE		=	U201610136_2.exe
 LIBSRC		= 	./STACK.cpp

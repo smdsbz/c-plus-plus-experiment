@@ -1,5 +1,5 @@
 /**
- * Pure-C implementation of stack
+ * A C++ implementation of stack
  *
  * Author:      Xiaoguang Zhu
  * Student ID:  U201610136

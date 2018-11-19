@@ -1,12 +1,12 @@
-CC		=	g++
+CC			=	g++
 CXXSTD		=	c++11
-OUTFILE		=	U201610136_1.exe
+OUTFILE		=	U201610136_3.exe
 LIBSRC		= 	./STACK.cpp
 MAINSRC		=	./main.cpp
 
 main:
 	$(CC) $(LIBSRC) $(MAINSRC) -o $(OUTFILE) -std=$(CXXSTD)
-	echo "Executable generated at ./$(OUTFILE)"
+	@echo "Executable generated at ./$(OUTFILE)"
 
 clean:	$(OUTFILE)
 	rm $(OUTFILE)
